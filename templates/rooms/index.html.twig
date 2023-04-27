@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to our rooms!
+{% endblock %}
+{% block body %}
+    <div class="row mt-3 mx-4">
+	<h1 class='text-center'>ROOMS</h1>
+	{% for room in liste_twig %}
+    <div class="col-md-4 mb-5">
+		<div class="shadow card card-bg rounded-3" style="width: 30rem;">
+			<div class="card-body">
+				<div class="text-center"><h5 class="card-title">{{ room.name }} - {{ room.capacity }} people</h5></div>
+				<div class="text-center"><p class="card-text">{{ room.description }}</p></div>
+				<div class="text-center mt-3"><a href={{ path("show_room", { id: room.id })}} class="btn btn-primary">Show the room</a></div>
+			</div>
+		</div>
+        </div>
+	{% endfor %}
+</div>
+{% endblock %}

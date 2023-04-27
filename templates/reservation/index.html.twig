@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!
+{% endblock %}
+
+{% block body %}
+	<h1>Reservation for
+		{{ room.name }}</h1>
+
+	{{ form_start(form) }}
+	{{ form_row(form.startDate) }}
+	{{ form_row(form.endDate) }}
+	{{ form_row(form.save) }}
+	{{ form_end(form) }}
+{% endblock %}
